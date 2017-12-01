@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+class abc
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int c1=0,c2=0,depth=0,pos,maxdepth=0,symb=0,maxsymb=0,maxpos,start=-1;
+		int []a=new int[n];
+		for(int i=0;i<n;i++)
+			a[i]=sc.nextInt();
+		for(int i=0;i<n;i++)
+	
+		{
+			
+			
+			if(a[i]==1)
+
+			{	
+				depth++;
+				if(depth>maxdepth)
+				{
+					maxdepth=depth;
+					pos=start;
+				}
+				
+				c1++;
+				if(i!=start)
+				{
+					symb++;
+					if(symb>maxsymb)
+						maxsymb=symb;
+				}
+
+			}
+			if(a[i]==2)
+				c2++;
+			if(c1==c2)
+			{
+				c1=c2=0;
+				depth=0;
+				start=i+1;
+				symb=0;
+			}
+			
+
+			
+		}
+		System.out.println(maxdepth," ",pos," ",maxsymb," ",maxpos);
+	}
+}
+
+
+
+			 	
+		
