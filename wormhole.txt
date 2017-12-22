@@ -1,0 +1,50 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>//for abs function
+void main()
+{
+	int n, v[100],w[100],start[100],end[100],min=-1,mindiffs=-1,mindiffe=-1,x,y,indexstartmindiff, indexendmindiff,diffs,diffe,totaltime;
+	int i,j;
+	cin>>n>>x>>y;
+	for(i=0;i<n;i++)
+		cin>>start[i]>>end[i];
+	for(i=0;i<x;i++)
+		cin>>v[i];//assume in ascending order
+	for(i=0;i<y;j++)
+		cin>>w[i];//assume in ascending order
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<x;j++)
+		{
+			diffs=abs(s[i]-v[j]);
+			if(mindiffs>diffs)
+			{
+				indexstartminddiff=j;
+				mindiffs=diffs;
+			}
+		}
+
+		for(j=0;j<y;j++)
+		{
+			diffe=abs(s[i]-w[j]);
+			if(mindiffe>diffe)
+			{
+				indexendminddiff=j;
+				mindiffe=diffe;
+			}
+		}
+		totaltime=mindiffe-mindiffs+1;
+		if(totaltime<min)
+			min=totaltime;
+	}
+	cout<<"\n"<<min;
+}
+			
+			
+	
+
+
+
+	
+	
+		
