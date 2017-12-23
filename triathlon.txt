@@ -1,0 +1,54 @@
+import java.io.*;
+import java.lang.*;
+class abc
+{
+	public static void main(String args[])
+	{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int n=Integer.parseInt(br.readLine());
+		int[] a=new int[n];
+		int[] b=new int[n];
+		int[] c=new int[n];
+		int sum=0,s=0,max=-,t,j,tempsum,tempsum1;
+		for(int i=0;i<n;i++)
+		{
+			int a[i]=Integer.parseInt(br.readLine());
+			int b[i]=Integer.parseInt(br.readLine());
+			int c[i]=Integer.parseInt(br.readLine());;
+		}
+		for(int i=0;i<n;i++)
+		{
+			for(j=0;j<n-i-1;j++)
+			{
+
+				tempsum=a[j]+b[j];
+				tempsum1=a[j+1]+b[j+1];
+				if(tempsum1<tempsum)
+				{
+					t=a[j];
+					a[j]=a[j+1];
+					a[j+1]=t1;
+
+					t=b[j];
+					b[j]=b[j+1];
+					b[j+1]=t1;
+
+					t=c[j];
+					c[j]=c[j+1];
+					c[j+1]=t1;
+				}
+			}
+		}
+				
+			
+		for(int i=0;i<n;i++)
+		{
+			sum+=a[i];
+			s+=sum+b[i]+c[i];
+			if(s>max)
+				max=s;
+		}
+		System.out.println(max);
+	}
+}
+			
