@@ -1,0 +1,30 @@
+#include<iostream.h>
+void main()
+{
+	int n,m;
+	cin>>n>>m;
+	int q[m],ans[m],i,a[n],max=-1,j,maxi;
+	for(i=0;i<n;i++)
+		cin>>a[i];
+	for(i=0;i<m;i++)
+		cin>>q[i];
+	ans[0]=0;//can be anything i guess
+	for(i=0;i<m;i++)//queries are in ascending order and we repeat the process of dividing by 2 only till we need answers to queries
+	{
+		max=-1;
+		for(j=0;j<n;j++)
+		{
+			if(a[i]>max)
+			{
+				max=a[i];
+				maxi=i;
+			}
+		}
+		ans[i+1]=a[maxi];
+		a[maxi]/=2;
+	}
+	for(i=0;i<m;i++)
+		cout<<ans[q[i]];
+}
+		
+			
