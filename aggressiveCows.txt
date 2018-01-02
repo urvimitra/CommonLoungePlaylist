@@ -1,0 +1,52 @@
+#include<iostream.h>
+#include<conio.h>
+int n,c;
+int x[10005];
+bool check(long dist)
+{
+	int last=x[0],i,count=1;
+	for(i=0;i<n;i++)
+	{
+		if(dist<(a[i]-last))
+		{
+			c++;
+			last=a[i];
+		}
+	}
+	if(count>=c)
+		return true;
+	else
+		return false;
+}
+void solve()
+{
+
+	int min,mi,ma,mid,pos=0;
+	cin>>n>>c;
+	for(int i=0;i<n;i++)
+		cin>>x[i];
+	mi=0; ma=n-1;
+	while(mi<=ma)
+	{
+		mid=(mi+ma)/2;
+		if(check(mid))
+		{
+			mi=mid+1;
+			pos=mid;
+		}
+		else
+			ma=mid-1;
+	}
+	cout<<"\n"<<pos;
+}
+void main()
+{
+	clrscr();
+	int t;
+	cin>>t;
+	while(t--)
+		solve();
+	getch();
+}
+	
+		
